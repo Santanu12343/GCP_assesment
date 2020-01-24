@@ -1,0 +1,19 @@
+create a bucket. Do the following operations with CLI.
+gsutil mb gs://shbuk
+
+a)Transfer file from one bucket to another
+gsutil cp gs://shbuk/DSC_0068.JPG/gs://shbuk1/
+
+b)Transfer a local file from your pc to bucket
+gsutil cp /home/shbuk/DSC_0068.JPG gs:/shbuk1/
+
+c)Download a file from bucket to local
+gsutil cp gs://shbuk/Bucket1.txt/ /home/sh_ss
+
+d)List all the objects in the bucket.
+gsutil ls gs://shbuk
+
+e)Delete objects in the bucket
+gsutil rm gs://shbuk/DSC_0068.JPG
+
+

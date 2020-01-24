@@ -1,0 +1,10 @@
+
+gcloud compute instances create shantanu \
+--zone us-east1-b \
+--image-family ubuntu-1804-lts \
+--image-project ubuntu-os-cloud \
+--machine-type f1-micro \
+--boot-disk-size 10GB
+
+gcloud compute disks resize ubu-chin --size 50 \--zone us-east1-b
+
