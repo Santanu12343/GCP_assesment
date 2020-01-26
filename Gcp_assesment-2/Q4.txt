@@ -1,0 +1,20 @@
+4)SSH into Instance B using instance A and try to install nginx.
+
+Prerequisites-
+An GCP account.
+ Automating Installation with Ansible, basic Linux system administration skills, including installation of Linux software from vendor‑supplied packages, and file creation and editing.
+
+->Use ssh-keygen in your local machine(# default keyfiles are stored in $HOME/.ssh/)
+ssh-add -k $HOME/.ssh/id_rsa    # add private key the ssh forwarding agent
+			#id_rsa use for the public key
+			#by using the ssh-add tool we can add the public key 
+				with ssh forwarding agent
+
+-> SSH into  public instance A 
+ssh -A <username>@<public-ip-of-instance>
+
+-> SSH into private instance B 
+ ssh <username>@<private-ip-of-instance-b>
+
+-> install nginx in instance B
+sudo apt-get install nginx

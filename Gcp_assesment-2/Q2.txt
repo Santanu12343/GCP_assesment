@@ -1,0 +1,29 @@
+2)  Launch instance B with only private ip in default VPC in different zone.
+
+step1-In the GCP console select Compute Engine 
+step2-Go to the VM instance page
+step3-. Click Create Instance 
+step4- Give a Name, Select the Zone and Region for the instance
+step5- Select the Series, Machine type - f1 micro
+step6- Configure the Boot Disk, Identity and API access
+step7- Select the Firewall access 
+Step8-Set external IP to 'None' in the Networking Interface drop down 
+step9- Click Create
+
+name: create a instance
+  gcp_filestore_instance:
+    name: test_object
+    zone: us-central1-b
+    tier: PREMIUM
+    file_shares:
+    - capacity_gb: 2660
+      name: share1
+    networks:
+    - network: 'none'
+      modes:
+      - MODE_IPV4
+    project: test_project
+    auth_kind: service account
+    service_account_file: "/tmp/p-key.pem"
+    state: present
+

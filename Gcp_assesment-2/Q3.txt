@@ -1,0 +1,20 @@
+3) configure NAT so instance can access Internet. 
+
+Prerequisites
+IAM permissions-:
+The networkAdmin role can create a NAT gateway on Cloud Router, reserve/assign NAT IPs, and specify subnets whose traffic should use NAT translation by the NAT gateway.
+
+-> create a cloud router for the NAT-
+gcloud compute routers create nat-router \
+  --network shub-vpc \
+  -region us-central1
+
+-> create a NAT for the subnet in the given region
+gcloud compute routers nats create nat-config \
+  --router-region us-central1 \
+  --router =nat-router \
+  --nat-all-subnet-ip-ranges \
+  --auto-allocate-nat-external-ips\
+ --enable-logging
+
+This configuration automatically allocates the necessary external IP addresses to provide NAT services to a region. VM instances without external IP addresses in any subnet of the region are provided Internet access through NAT. It also turns on logging for all log types.
