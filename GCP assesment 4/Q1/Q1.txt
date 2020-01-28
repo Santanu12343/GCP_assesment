@@ -1,0 +1,9 @@
+Steps to host a static website ->
+
+step1- Create a bucket then upload a website file 'index.html'  as object in gcs bucket
+step2- Find your bucket in the list of buckets 
+step3- Click  the 'Edit Permissions' from the menu of your object file.
+step4- In 'New Members' select 'allUsers' then Select Role as 'Storage Object Viewer'
+step5- You will find your public access link for your index.html file in the bucket .
+step6- Use this 'linkURL'to open your website.
+	EX-https://storage.cloud.google.com/shbuk1/index.html?authuser=1
